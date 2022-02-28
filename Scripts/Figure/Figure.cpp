@@ -4,9 +4,5 @@
 
 Figure::Figure(std::pair<int,int> cell) {
 	this->cell = cell;
-	this->recount_coords();
-}
-
-void Figure::recount_coords() {
-	this->cell = {-1, -1};
+	this->available_coords = std::vector<std::pair<int, int>>();
 }

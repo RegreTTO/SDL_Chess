@@ -9,7 +9,7 @@
 class King : private Figure{
 public:
 	explicit King(std::pair<int, int> cell);
-	void recount_coords();
+	void recount_coords() override;
 };
 
 

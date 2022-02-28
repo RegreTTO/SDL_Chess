@@ -9,11 +9,12 @@
 class Figure {
 protected:
 	std::pair<int, int> cell;
-	std::vector<std::pair<int, int>> available_coords{};
+	std::vector<std::pair<int, int>> available_coords;
 public:
 	explicit Figure(std::pair<int, int> cell);
 
-	void recount_coords();
+	virtual void recount_coords() = 0;
+
 };
 
 
