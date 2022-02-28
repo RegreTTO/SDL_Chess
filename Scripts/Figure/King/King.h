@@ -6,10 +6,11 @@
 
 #include "../Figure.h"
 
-class King : private Figure{
+class King : public Figure{
 public:
 	explicit King(std::pair<int, int> cell);
 	void recount_coords() override;
+
 };
 
 

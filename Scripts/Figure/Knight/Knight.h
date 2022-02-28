@@ -7,7 +7,7 @@
 #include <utility>
 #include "../Figure.h"
 
-class Knight : private Figure{
+class Knight : public Figure{
 public:
 	explicit Knight(std::pair<int, int> cell);
 

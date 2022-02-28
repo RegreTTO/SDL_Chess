@@ -6,7 +6,7 @@
 
 #include "../Figure.h"
 
-class Rook : private Figure{
+class Rook : public Figure{
 public:
 	explicit Rook(std::pair<int, int> cell);
 

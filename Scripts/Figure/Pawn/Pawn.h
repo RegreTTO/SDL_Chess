@@ -6,7 +6,7 @@
 
 #include "../Figure.h"
 
-class Pawn : private Figure{
+class Pawn : public Figure{
 public:
 	explicit Pawn(std::pair<int, int> cell);
 
