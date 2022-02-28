@@ -13,6 +13,8 @@ protected:
 public:
 	explicit Figure(std::pair<int, int> cell);
 
+	void set_cell(std::pair<int, int> cell1);
+
 	virtual void recount_coords() = 0;
 
 };
