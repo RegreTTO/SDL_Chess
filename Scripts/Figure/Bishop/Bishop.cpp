@@ -6,6 +6,6 @@ void Bishop::recount_coords() {
 	//TODO
 }
 
-Bishop::Bishop(std::pair<int, int> cell) : Figure(cell) {
-}
+Bishop::Bishop(std::pair<int, int> cell, int color) : Figure(cell, color) {
 
+}

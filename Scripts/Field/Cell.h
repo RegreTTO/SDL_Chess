@@ -13,6 +13,8 @@ private:
 	int x, y;
 	Figure *fig = nullptr;
 public:
+	Cell();
+
 	Cell(int x, int y);
 
 	Figure *get_figure();

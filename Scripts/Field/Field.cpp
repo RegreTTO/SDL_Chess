@@ -1,0 +1,54 @@
+
+#include "../Figure/Figures.h"
+#include "Field.h"
+
+Field::Field() : field() {
+	this->field = new Cell *[8];
+	for (int i = 0; i < 8; i++)
+		this->field[i] = new Cell[8];
+
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			this->field[i][j] = Cell(i, j);
+		}
+	}
+}
+
+Field::~Field() {
+	for (int i = 0; i < 8; i++)
+		delete[] this->field[i];
+	delete[] this->field;
+}
+
+Cell **Field::get_field() {
+	return this->field;
+}
+
+void Field::init_figures() {
+	for (int i = 0; i < 8; i++) {
+		this->field[1][i].set_figure(new Pawn({1, i}, 0));
+		this->field[6][i].set_figure(new Pawn({6, i}, 1));
+	}
+
+	this->field[7][0].set_figure(new Rook({7, 0}, 1));
+	this->field[7][7].set_figure(new Rook({7, 7}, 1));
+	this->field[0][0].set_figure(new Rook({0, 0}, 0));
+	this->field[0][7].set_figure(new Rook({0, 7}, 0));
+
+	this->field[7][1].set_figure(new Knight({7, 1}, 1));
+	this->field[7][6].set_figure(new Knight({7, 6}, 1));
+	this->field[0][1].set_figure(new Knight({0, 1}, 0));
+	this->field[0][6].set_figure(new Knight({0, 6}, 0));
+
+	this->field[7][2].set_figure(new Bishop({7, 2}, 1));
+	this->field[0][2].set_figure(new Bishop({0, 2}, 0));
+	this->field[7][5].set_figure(new Bishop({7, 5}, 1));
+	this->field[0][5].set_figure(new Bishop({0, 5}, 0));
+
+	this->field[0][3].set_figure(new Queen({0, 3}, 0));
+	this->field[7][3].set_figure(new Queen({7, 3}, 1));
+
+	this->field[0][4].set_figure(new King({0, 4}, 0));
+	this->field[7][4].set_figure(new King({7, 4}, 1));
+}
+

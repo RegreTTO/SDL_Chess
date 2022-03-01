@@ -6,9 +6,15 @@
 
 #include "../Figure.h"
 
-class King : public Figure{
+class King : public Figure {
+	const std::string name = "King";
+
 public:
-	explicit King(std::pair<int, int> cell);
+
+	explicit King(std::pair<int, int> cell, int color);
+
+	std::string get_name() override { return name; }
+	int get_color() override {return color;}
 	void recount_coords() override;
 
 };

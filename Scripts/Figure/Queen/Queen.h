@@ -7,8 +7,15 @@
 #include "../Figure.h"
 
 class Queen : public Figure {
+	const std::string name = "Queen";
+
 public:
-	explicit Queen(std::pair<int, int> cell);
+
+	std::string get_name() override { return name; }
+
+	explicit Queen(std::pair<int, int> cell, int color);
+
+	int get_color() override { return color; }
 
 	void recount_coords() override;
 };

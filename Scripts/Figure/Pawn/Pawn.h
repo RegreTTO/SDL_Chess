@@ -6,9 +6,17 @@
 
 #include "../Figure.h"
 
-class Pawn : public Figure{
+class Pawn : public Figure {
+
+	const std::string name = "Pawn";
+
 public:
-	explicit Pawn(std::pair<int, int> cell);
+
+	std::string get_name() override { return name; }
+
+	int get_color() override { return color; }
+
+	explicit Pawn(std::pair<int, int> cell, int color);
 
 	void recount_coords() override;
 };

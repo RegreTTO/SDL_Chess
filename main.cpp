@@ -1,5 +1,8 @@
+#include <iostream>
 #include "SDL2/SDL.h"
-#include "Scripts/Figure/King/King.h"
+#include "Scripts/Field/Field.h"
+#include "Scripts/Figure/Figures.h"
+
 using namespace std;
 
 #define WINDOW_WIDTH 800
@@ -27,7 +30,19 @@ int main(int argc, char *args[]) {
 //	SDL_DestroyWindow(window);
 //	SDL_Quit();
 //	return 0;
-	King b({-2, -2});
+	Field f;
+	f.init_figures();
+	auto a = f.get_field();
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			auto cell = a[i][j];
+			if(cell.get_figure() == nullptr)
+				continue;
+			std::string s = cell.get_figure()->get_name();
+			std::printf("(%s, %d), ", s.c_str(), cell.get_figure()->get_color());
+		}
+		std::cout << endl;
+	}
 
 
 }
