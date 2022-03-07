@@ -18,6 +18,11 @@ Cell::Cell() {
 	this->y = 0;
 }
 
-void Cell::render() {
-
+void Cell::render(SDL_Renderer *renderer) const {
+    if ((x+y)%2 != 0)
+        SDL_SetRenderDrawColor(renderer, 156, 156, 252, 255); // чёрная клетка
+    else
+        SDL_SetRenderDrawColor(renderer, 235, 235, 255, 255); // белая клетка
+    SDL_Rect rect = {x*100+25, y*100+25, 100, 100};
+    SDL_RenderFillRect(renderer, &rect);
 }

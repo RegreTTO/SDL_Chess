@@ -13,9 +13,7 @@ public:
 
 	explicit Bishop(std::pair<int, int> cell, int color) : Figure(cell, color) {};
 
-	std::string get_name() override { return name; }
-
-	void render() override;
+	void render(SDL_Renderer *renderer) override;
 };
 
 

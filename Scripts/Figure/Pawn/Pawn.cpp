@@ -3,6 +3,6 @@
 #include "Pawn.h"
 
 
-void Pawn::render() {
-    this->parse_picture("");
+void Pawn::render(SDL_Renderer *renderer) {
+    this->parse_picture(renderer, "../sprites/pawn.txt");
 }

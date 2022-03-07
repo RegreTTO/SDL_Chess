@@ -16,7 +16,7 @@ public:
 
 	void init_figures();
 
-	void move_figure(Figure* fig, Cell* cell);
+	void move_figure(SDL_Renderer *renderer, Figure* fig, Cell* cell);
 };
 
 
