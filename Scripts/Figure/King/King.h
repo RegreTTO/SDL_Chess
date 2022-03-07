@@ -11,9 +11,10 @@ class King : public Figure {
 
 public:
 
-	explicit King(std::pair<int, int> cell, int color);
+	explicit King(std::pair<int, int> cell, int color) : Figure(cell, color) {};
 
 	std::string get_name() override { return name; }
+
 	void render() override;
 };
 

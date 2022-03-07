@@ -8,6 +8,11 @@ using namespace std;
 
 #define WINDOW_WIDTH 800
 
+
+ostream &operator<<(ostream &os, const pair<int, int> &p) {
+	return os << p.first << ' ' << p.second;
+}
+
 int main(int argc, char *args[]) {
 //	SDL_Window *window;
 //	SDL_Renderer *renderer;
@@ -55,9 +60,9 @@ int main(int argc, char *args[]) {
 //	SDL_DestroyRenderer(renderer);
 //	SDL_DestroyWindow(window);
 //	SDL_Quit();
-    Field f;
-    f.init_figures();
-    f.get_field()[0][0].get_figure()->get_cell().first;
-    cout << endl;
-    f.get_field()[6][7].get_figure()->get_cell().first;
+	Field f;
+	f.init_figures();
+	cout << f.get_field()[0][0].get_figure()->get_color();
+	cout << endl;
+	cout << f.get_field()[6][7].get_figure()->get_color();
 }

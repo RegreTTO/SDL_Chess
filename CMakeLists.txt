@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project("sdl_chess")
 
 SET(CMAKE_CXX_STANDARD 20)
-
+#SET(SDL2_PATH C:/SDL2)
 #find_package(SDL2 REQUIRED)
 #include_directories(${SDL2_INCLUDE_DIR})
 
