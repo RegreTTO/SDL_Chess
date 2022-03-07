@@ -14,8 +14,6 @@ public:
 
 	std::string get_name() override { return name; }
 
-	int get_color() override { return color; }
-
 	explicit Pawn(std::pair<int, int> cell, int color);
 
 	void render() override;

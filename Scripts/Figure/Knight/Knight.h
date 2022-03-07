@@ -16,8 +16,6 @@ public:
 
 	std::string get_name() override { return name; }
 
-	int get_color() override { return color; }
-
 	void render() override;
 };
 

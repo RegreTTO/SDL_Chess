@@ -17,3 +17,7 @@ Cell::Cell() {
 	this->x = 0;
 	this->y = 0;
 }
+
+void Cell::render() {
+
+}

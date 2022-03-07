@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="sdl_chess"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/aleks/CLionProjects/SDL_Chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sdl_chess">
+				<Option output="C:/Users/aleks/CLionProjects/SDL_Chess/cmake-build-debug/sdl_chess.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/aleks/CLionProjects/SDL_Chess/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 sdl_chess"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sdl_chess/fast">
+				<Option output="C:/Users/aleks/CLionProjects/SDL_Chess/cmake-build-debug/sdl_chess.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/aleks/CLionProjects/SDL_Chess/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 sdl_chess/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/aleks/CLionProjects/SDL_Chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/aleks/CLionProjects/SDL_Chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\aleks\CLionProjects\SDL_Chess\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Field/Cell.cpp">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Field/Cell.h">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Field/Field.cpp">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Field/Field.h">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Bishop/Bishop.cpp">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Bishop/Bishop.h">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Figure.cpp">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Figure.h">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Figures.h">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/King/King.cpp">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/King/King.h">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Knight/Knight.cpp">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Knight/Knight.h">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Pawn/Pawn.cpp">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Pawn/Pawn.h">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Queen/Queen.cpp">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Queen/Queen.h">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Rook/Rook.cpp">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/Scripts/Figure/Rook/Rook.h">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/main.cpp">
+			<Option target="sdl_chess"/>
+		</Unit>
+		<Unit filename="C:/Users/aleks/CLionProjects/SDL_Chess/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
