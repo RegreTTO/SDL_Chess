@@ -10,9 +10,8 @@
 class Figure {
 protected:
 	std::pair<int, int> cell;
-	std::vector<std::pair<int, int>> available_coords;
 	std::string name;
-	int color;
+	bool color;
 public:
 	explicit Figure(std::pair<int, int> cell, int color);
 
@@ -20,10 +19,13 @@ public:
 
 	void set_cell(std::pair<int, int> cell1);
 
+	std::pair<int, int> get_cell() { return cell; }
+
 	virtual std::string get_name();
 
-	virtual void recount_coords() = 0;
+	virtual void render() = 0;
 
+	void parse_picture(const std::string &path);
 };
 
 

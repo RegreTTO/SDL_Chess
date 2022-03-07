@@ -18,7 +18,8 @@ public:
 
 	explicit Pawn(std::pair<int, int> cell, int color);
 
-	void recount_coords() override;
+	void render() override;
+
 };
 
 

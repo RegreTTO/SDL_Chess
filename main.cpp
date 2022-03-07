@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "SDL2/SDL.h"
 #include "Scripts/Field/Field.h"
 #include "Scripts/Figure/Figures.h"
