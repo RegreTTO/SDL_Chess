@@ -18,6 +18,7 @@ public:
 
 	int get_color() override { return color; }
 
+	void render() override;
 };
 
 

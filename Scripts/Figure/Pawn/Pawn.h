@@ -18,6 +18,8 @@ public:
 
 	explicit Pawn(std::pair<int, int> cell, int color);
 
+	void render() override;
+
 };
 
 
