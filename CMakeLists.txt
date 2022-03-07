@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.21)
 
 project("sdl_chess")
 
-SET(CMAKE_CXX_STANDARD 14)
+#SET(CMAKE_CXX_STANDARD 14)
 
 find_package(SDL2 REQUIRED)
 

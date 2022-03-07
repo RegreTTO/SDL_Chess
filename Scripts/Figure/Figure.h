@@ -22,8 +22,6 @@ public:
 
 	virtual std::string get_name();
 
-	virtual void recount_coords() = 0;
-
 };
 
 

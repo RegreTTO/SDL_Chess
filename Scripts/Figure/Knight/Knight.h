@@ -18,7 +18,6 @@ public:
 
 	int get_color() override { return color; }
 
-	void recount_coords() override;
 };
 
 
