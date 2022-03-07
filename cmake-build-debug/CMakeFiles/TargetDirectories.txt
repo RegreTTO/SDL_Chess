@@ -1,3 +1,0 @@
-C:/Users/aleks/CLionProjects/SDL_Chess/cmake-build-debug/CMakeFiles/sdl_chess.dir
-C:/Users/aleks/CLionProjects/SDL_Chess/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/aleks/CLionProjects/SDL_Chess/cmake-build-debug/CMakeFiles/rebuild_cache.dir
