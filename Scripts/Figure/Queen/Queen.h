@@ -15,8 +15,6 @@ public:
 
 	explicit Queen(std::pair<int, int> cell, int color);
 
-	int get_color() override { return color; }
-
 	void render() override;
 };
 

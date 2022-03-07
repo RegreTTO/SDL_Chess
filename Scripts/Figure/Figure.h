@@ -11,11 +11,13 @@ class Figure {
 protected:
 	std::pair<int, int> cell;
 	std::string name;
-	bool color;
+	int color;
+    void parse_picture(const std::string &path);
+
 public:
 	explicit Figure(std::pair<int, int> cell, int color);
 
-	virtual int get_color() { return color; }
+	int get_color() const { return color; }
 
 	void set_cell(std::pair<int, int> cell1);
 
@@ -25,7 +27,6 @@ public:
 
 	virtual void render() = 0;
 
-	void parse_picture(const std::string &path);
 };
 
 

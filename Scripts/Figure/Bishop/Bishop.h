@@ -12,7 +12,6 @@ class Bishop : public Figure {
 public:
 
 	explicit Bishop(std::pair<int, int> cell, int color);
-	int get_color() override {return color;}
 	std::string get_name() override { return name; }
 	void render() override;
 };
