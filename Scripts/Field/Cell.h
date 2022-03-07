@@ -23,7 +23,7 @@ public:
 
 	std::pair<int, int> get_coords();
 
-	void render();
+	void render(SDL_Renderer *renderer) const;
 
 };
 

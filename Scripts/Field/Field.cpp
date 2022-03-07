@@ -52,11 +52,12 @@ void Field::init_figures() {
 	this->field[7][4].set_figure(new King({7, 4}, 1));
 }
 
-void Field::move_figure(Figure *fig, Cell *cell) {
+void Field::move_figure(SDL_Renderer *renderer, Figure *fig, Cell *cell) {
 	std::pair<int, int> starting_coords = fig->get_cell();
-	this->field[starting_coords.first][starting_coords.second].render();
+	this->field[starting_coords.first][starting_coords.second].render(renderer);
 	this->field[starting_coords.first][starting_coords.second].set_figure(nullptr);
 	cell->set_figure(fig);
-	fig->render();
+	fig->set_cell(cell->get_coords());
+	fig->render(renderer);
 }
 

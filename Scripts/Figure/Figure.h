@@ -3,9 +3,9 @@
 #ifndef SDL_CHESS_FIGURE_H
 #define SDL_CHESS_FIGURE_H
 
-
 #include "vector"
 #include "string"
+#include "SDL2/SDL.h"
 
 class Figure {
 protected:
@@ -13,7 +13,7 @@ protected:
 	std::string name;
 	int color;
 
-	void parse_picture(const std::string &path);
+	void parse_picture(SDL_Renderer *renderer, const std::string &path);
 
 
 public:
@@ -26,7 +26,7 @@ public:
 	void set_cell(std::pair<int, int> cell1);
 
 
-	virtual void render() = 0;
+	virtual void render(SDL_Renderer *renderer) = 0;
 
 	std::pair<int, int> get_cell() { return this->cell; }
 };

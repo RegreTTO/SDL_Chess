@@ -10,12 +10,9 @@ class Queen : public Figure {
 	const std::string name = "Queen";
 
 public:
-
-	std::string get_name() override { return name; }
-
 	explicit Queen(std::pair<int, int> cell, int color): Figure(cell, color){};
 
-	void render() override;
+	void render(SDL_Renderer *renderer) override;
 };
 
 
