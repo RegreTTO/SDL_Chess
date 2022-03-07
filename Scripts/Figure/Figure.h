@@ -12,21 +12,23 @@ protected:
 	std::pair<int, int> cell;
 	std::string name;
 	int color;
-    void parse_picture(const std::string &path);
+
+	void parse_picture(const std::string &path);
+
 
 public:
 	explicit Figure(std::pair<int, int> cell, int color);
 
-	int get_color() const { return color; }
+	int get_color() const { return this->color; }
+
+	virtual std::string get_name() { return this->name; };
 
 	void set_cell(std::pair<int, int> cell1);
 
-	std::pair<int, int> get_cell() { return cell; }
-
-	virtual std::string get_name();
 
 	virtual void render() = 0;
 
+	std::pair<int, int> get_cell() { return this->cell; }
 };
 
 

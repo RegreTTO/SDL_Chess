@@ -12,7 +12,7 @@ class Knight : public Figure {
 
 public:
 
-	explicit Knight(std::pair<int, int> cell, int color);
+	explicit Knight(std::pair<int, int> cell, int color) : Figure(cell, color) {};
 
 	std::string get_name() override { return name; }
 
