@@ -16,6 +16,10 @@ public:
 
 	void init_figures();
 
+	static void init_bar_first(SDL_Renderer *renderer);
+
+    static void init_bar_second(SDL_Renderer *renderer);
+
 	void move_figure(SDL_Renderer *renderer, Figure* fig, Cell* cell);
 };
 

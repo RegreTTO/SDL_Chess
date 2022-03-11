@@ -12,14 +12,24 @@ int main(int argc, char *args[]) {
     SDL_Window *window;
     SDL_Renderer *renderer;
     SDL_Init(SDL_INIT_EVERYTHING);
-    SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_WIDTH, 0, &window, &renderer);
+    SDL_CreateWindowAndRenderer(WINDOW_WIDTH+250, WINDOW_WIDTH, 0, &window, &renderer);
     bool is_done = false;
-    SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
+    SDL_SetRenderDrawColor(renderer, 213, 43, 30, 255);
     SDL_RenderClear(renderer);
+
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_Rect a = {0, 0, 1100, 283};
+    SDL_RenderFillRect(renderer, &a);
+
+    SDL_SetRenderDrawColor(renderer, 0, 57, 166, 255);
+    SDL_Rect a1 = {0, 283, 1100, 283};
+    SDL_RenderFillRect(renderer, &a1);
 
     Field f;
     f.init_figures();
     Cell **field = f.get_field();
+    Field::init_bar_first(renderer);
+    Field::init_bar_second(renderer);
 
 
     while (!is_done) {
@@ -33,24 +43,6 @@ int main(int argc, char *args[]) {
             }
         }
         SDL_RenderPresent(renderer);
-
-        if (field[0][0].get_figure() != nullptr)
-            f.move_figure(renderer, field[0][0].get_figure(), &field[3][2]);
-
-        SDL_SetRenderDrawColor(renderer, 50, 50, 255, 255);
-
-//        SDL_Rect rect = {25, 25, 50, 50};
-//        SDL_RenderFillRect(renderer, &rect);
-//        SDL_Rect rect1 = {125, 25, 50, 50};
-//        SDL_RenderFillRect(renderer, &rect1);
-
-
-        SDL_SetRenderDrawColor(renderer, 184, 193, 255, 255);
-
-//        SDL_Rect rect2 = {25, 125, 50, 50};
-//        SDL_RenderFillRect(renderer, &rect2);
-//        SDL_Rect rect3 = {125, 125, 50, 50};
-//        SDL_RenderFillRect(renderer, &rect3);
 
         SDL_RenderPresent(renderer);
         while (SDL_PollEvent(&event)) {
