@@ -21,6 +21,8 @@ public:
     static void init_bar_second(SDL_Renderer *renderer);
 
 	void move_figure(SDL_Renderer *renderer, Figure* fig, Cell* cell);
+
+	void mouse_click_handler(SDL_Renderer *renderer, int x, int y);
 };
 
 
