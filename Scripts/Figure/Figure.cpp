@@ -22,7 +22,6 @@ void Figure::parse_picture(SDL_Renderer *renderer, const std::string& path) {
     std::string s;
     while (!file.eof()) {
         std::getline(file, s);
-        const char *a = s.c_str();
         for (char c : s) {
             if (c == '%') {
                 SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
@@ -30,9 +29,9 @@ void Figure::parse_picture(SDL_Renderer *renderer, const std::string& path) {
             }
             else if (c == '#') {
                 if (this->get_color() == 1)
-                    SDL_SetRenderDrawColor(renderer, 205, 205, 205, 255);
+                    SDL_SetRenderDrawColor(renderer, 255,255,255, 255);
                 else
-                    SDL_SetRenderDrawColor(renderer, 55, 55, 55, 255);
+                    SDL_SetRenderDrawColor(renderer, 213,43,30, 255);
                 SDL_RenderDrawPoint(renderer, i, j);
             }
             i++;

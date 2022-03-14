@@ -1,4 +1,5 @@
 
+#include <c++/4.8.3/fstream>
 #include "../Figure/Figures.h"
 #include "Field.h"
 
@@ -52,6 +53,65 @@ void Field::init_figures() {
 	this->field[7][4].set_figure(new King({7, 4}, 1));
 }
 
+void Field::init_bar_first(SDL_Renderer *renderer) {
+    const int x = 875;
+    const int y = 25;
+    int i = x;
+    int j = y;
+    std::string s;
+    std::string sprites[6] = {"../sprites/king.txt", "../sprites/queen.txt", "../sprites/rook.txt",
+                        "../sprites/bishop.txt", "../sprites/knight.txt", "../sprites/pawn.txt"};
+    for (const auto& a : sprites) {
+        std::ifstream file(a);
+        while (!file.eof()) {
+            std::getline(file, s);
+            for (char c : s) {
+                if (c == '%') {
+                    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+                    SDL_RenderDrawPoint(renderer, i, j);
+                }
+                else if (c == '#') {
+                    SDL_RenderDrawPoint(renderer, i, j);
+                    SDL_SetRenderDrawColor(renderer, 255,255,255, 255);
+                }
+                i++;
+            }
+            j++;
+            i = x;
+        }
+    }
+}
+
+void Field::init_bar_second(SDL_Renderer *renderer) {
+    const int x = 975;
+    const int y = 25;
+    int i = x;
+    int j = y;
+    std::string s;
+    std::string sprites[6] = {"../sprites/king.txt", "../sprites/queen.txt", "../sprites/rook.txt",
+                              "../sprites/bishop.txt", "../sprites/knight.txt", "../sprites/pawn.txt"};
+
+    for (const auto& a : sprites) {
+        std::ifstream file(a);
+        while (!file.eof()) {
+            std::getline(file, s);
+            for (char c : s) {
+                if (c == '%') {
+                    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+                    SDL_RenderDrawPoint(renderer, i, j);
+                }
+                else if (c == '#') {
+                    SDL_RenderDrawPoint(renderer, i, j);
+                    SDL_SetRenderDrawColor(renderer, 213, 43, 30, 255);
+                }
+                i++;
+            }
+            j++;
+            i = x;
+        }
+    }
+}
+
 void Field::move_figure(SDL_Renderer *renderer, Figure *fig, Cell *cell) {
 	std::pair<int, int> starting_coords = fig->get_cell();
 	this->field[starting_coords.first][starting_coords.second].render(renderer);
@@ -60,4 +120,3 @@ void Field::move_figure(SDL_Renderer *renderer, Figure *fig, Cell *cell) {
 	fig->set_cell(cell->get_coords());
 	fig->render(renderer);
 }
-
