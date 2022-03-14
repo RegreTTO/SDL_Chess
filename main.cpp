@@ -14,16 +14,8 @@ int main(int argc, char *args[]) {
     SDL_Init(SDL_INIT_EVERYTHING);
     SDL_CreateWindowAndRenderer(WINDOW_WIDTH+250, WINDOW_WIDTH, 0, &window, &renderer);
     bool is_done = false;
-    SDL_SetRenderDrawColor(renderer, 213, 43, 30, 255);
+    SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
     SDL_RenderClear(renderer);
-
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_Rect a = {0, 0, 1100, 283};
-    SDL_RenderFillRect(renderer, &a);
-
-    SDL_SetRenderDrawColor(renderer, 0, 57, 166, 255);
-    SDL_Rect a1 = {0, 283, 1100, 283};
-    SDL_RenderFillRect(renderer, &a1);
 
     Field f;
     f.init_figures();
@@ -43,11 +35,12 @@ int main(int argc, char *args[]) {
             }
         }
         SDL_RenderPresent(renderer);
-
-        SDL_RenderPresent(renderer);
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT)
                 is_done = true;
+			if (event.button.type == SDL_MOUSEBUTTONUP){
+				SDL_Log("(%d, %d)", event.button.x, event.button.y);
+			}
         }
     }
     SDL_DestroyRenderer(renderer);
