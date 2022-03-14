@@ -17,6 +17,7 @@ int main(int argc, char *args[]) {
     SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
     SDL_RenderClear(renderer);
 
+
     Field f;
     f.init_figures();
     Cell **field = f.get_field();
@@ -34,6 +35,7 @@ int main(int argc, char *args[]) {
                 if (figure != nullptr) figure->render(renderer);
             }
         }
+		field[1][1].select(renderer);
         SDL_RenderPresent(renderer);
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT)
