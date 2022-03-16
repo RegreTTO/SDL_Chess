@@ -29,9 +29,9 @@ void Figure::parse_picture(SDL_Renderer *renderer, const std::string& path) {
             }
             else if (c == '#') {
                 if (this->get_color() == 1)
-                    SDL_SetRenderDrawColor(renderer, 255,255,255, 255);
+                    SDL_SetRenderDrawColor(renderer, 202,204,198, 255);
                 else
-                    SDL_SetRenderDrawColor(renderer, 213,43,30, 255);
+                    SDL_SetRenderDrawColor(renderer, 60,149,208, 255);
                 SDL_RenderDrawPoint(renderer, i, j);
             }
             i++;

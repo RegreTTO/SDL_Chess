@@ -65,6 +65,9 @@ void Field::init_bar_first(SDL_Renderer *renderer) {
     std::string sprites[6] = {"../sprites/king.txt", "../sprites/queen.txt", "../sprites/rook.txt",
                               "../sprites/bishop.txt", "../sprites/knight.txt", "../sprites/pawn.txt"};
     for (const auto &a : sprites) {
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_Rect rect = {i, j, 101, 102};
+        SDL_RenderDrawRect(renderer, &rect);
         std::ifstream file(a);
         while (!file.eof()) {
             std::getline(file, s);
@@ -74,7 +77,7 @@ void Field::init_bar_first(SDL_Renderer *renderer) {
                     SDL_RenderDrawPoint(renderer, i, j);
                 } else if (c == '#') {
                     SDL_RenderDrawPoint(renderer, i, j);
-                    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+                    SDL_SetRenderDrawColor(renderer, 60,149,208, 255);
                 }
                 i++;
             }
@@ -92,8 +95,13 @@ void Field::init_bar_second(SDL_Renderer *renderer) {
     std::string s;
     std::string sprites[6] = {"../sprites/king.txt", "../sprites/queen.txt", "../sprites/rook.txt",
                               "../sprites/bishop.txt", "../sprites/knight.txt", "../sprites/pawn.txt"};
-
     for (const auto &a : sprites) {
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_Rect rect = {i, j, 101, 102};
+        SDL_RenderDrawRect(renderer, &rect);
+        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+        SDL_Rect rect1 = {i+1, j+1, 99, 100};
+        SDL_RenderDrawRect(renderer, &rect1);
         std::ifstream file(a);
         while (!file.eof()) {
             std::getline(file, s);
@@ -103,7 +111,7 @@ void Field::init_bar_second(SDL_Renderer *renderer) {
                     SDL_RenderDrawPoint(renderer, i, j);
                 } else if (c == '#') {
                     SDL_RenderDrawPoint(renderer, i, j);
-                    SDL_SetRenderDrawColor(renderer, 213, 43, 30, 255);
+                    SDL_SetRenderDrawColor(renderer, 202,204,198, 255);
                 }
                 i++;
             }
