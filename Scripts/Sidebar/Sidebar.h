@@ -4,7 +4,10 @@
 #include "../Field/Cell.h"
 
 class Sidebar {
+private:
+	Cell **figures;
 public:
+	Sidebar();
 	static void show(SDL_Renderer *renderer);
 };
 
