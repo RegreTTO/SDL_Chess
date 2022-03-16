@@ -3,7 +3,7 @@
 #include "../Figure/Figures.h"
 #include "Field.h"
 
-Field::Field() : field() {
+Field::Field(){
     this->chosen_cell = nullptr;
     this->field = new Cell *[8];
     for (int i = 0; i < 8; i++)
@@ -56,7 +56,7 @@ void Field::init_figures() {
     this->field[7][4].set_figure(new King({7, 4}, 1));
 }
 
-void Field::init_bar_first(SDL_Renderer *renderer) {
+void Field::show_board(SDL_Renderer *renderer) {
     const int x = 800;
     const int y = 0;
     int i = x;
@@ -88,37 +88,7 @@ void Field::init_bar_first(SDL_Renderer *renderer) {
 }
 
 void Field::init_bar_second(SDL_Renderer *renderer) {
-    const int x = 900;
-    const int y = 0;
-    int i = x;
-    int j = y;
-    std::string s;
-    std::string sprites[6] = {"../sprites/king.txt", "../sprites/queen.txt", "../sprites/rook.txt",
-                              "../sprites/bishop.txt", "../sprites/knight.txt", "../sprites/pawn.txt"};
-    for (const auto &a : sprites) {
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-        SDL_Rect rect = {i, j, 101, 102};
-        SDL_RenderDrawRect(renderer, &rect);
-        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-        SDL_Rect rect1 = {i+1, j+1, 99, 100};
-        SDL_RenderDrawRect(renderer, &rect1);
-        std::ifstream file(a);
-        while (!file.eof()) {
-            std::getline(file, s);
-            for (char c : s) {
-                if (c == '%') {
-                    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-                    SDL_RenderDrawPoint(renderer, i, j);
-                } else if (c == '#') {
-                    SDL_RenderDrawPoint(renderer, i, j);
-                    SDL_SetRenderDrawColor(renderer, 202,204,198, 255);
-                }
-                i++;
-            }
-            j++;
-            i = x;
-        }
-    }
+
 }
 
 void Field::move_figure(SDL_Renderer *renderer, Figure *fig, Cell *cell) {

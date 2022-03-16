@@ -9,8 +9,9 @@ class Field {
 private:
 	Cell **field;
 	Cell *chosen_cell;
-	const SDL_Color white = {156, 156, 252};
-	const SDL_Color black = {235, 235, 255};
+	SDL_Color white = {156, 156, 252};
+	SDL_Color black = {235, 235, 255};
+
 	void move_figure(SDL_Renderer *renderer, Figure* fig, Cell* cell);
     void board_click(SDL_Renderer *renderer, int x, int y);
 public:
@@ -21,7 +22,7 @@ public:
 
 	void init_figures();
 
-	static void init_bar_first(SDL_Renderer *renderer);
+	static void show_board(SDL_Renderer *renderer);
 
     static void init_bar_second(SDL_Renderer *renderer);
 
