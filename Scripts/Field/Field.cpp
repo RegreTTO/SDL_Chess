@@ -57,8 +57,8 @@ void Field::init_figures() {
 }
 
 void Field::init_bar_first(SDL_Renderer *renderer) {
-    const int x = 875;
-    const int y = 25;
+    const int x = 800;
+    const int y = 0;
     int i = x;
     int j = y;
     std::string s;
@@ -88,8 +88,8 @@ void Field::init_bar_first(SDL_Renderer *renderer) {
 }
 
 void Field::init_bar_second(SDL_Renderer *renderer) {
-    const int x = 975;
-    const int y = 25;
+    const int x = 900;
+    const int y = 0;
     int i = x;
     int j = y;
     std::string s;

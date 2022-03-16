@@ -14,8 +14,8 @@ void Figure::set_cell(std::pair<int, int> cell1) {
 
 
 void Figure::parse_picture(SDL_Renderer *renderer, const std::string& path) {
-    const int x = this->get_cell().first*100+25;
-    const int y = this->get_cell().second*100+25;
+    const int x = this->get_cell().first*100;
+    const int y = this->get_cell().second*100;
     int i = x;
     int j = y;
     std::ifstream file(path);
