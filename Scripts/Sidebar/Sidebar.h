@@ -4,8 +4,8 @@
 #include "../Field/Cell.h"
 
 class Sidebar {
-private:
-    
+public:
+	static void show(SDL_Renderer *renderer);
 };
 
 
