@@ -10,21 +10,27 @@
 
 class Cell {
 private:
-	int x, y;
-	Figure *fig = nullptr;
+    int x, y;
+    Figure *fig = nullptr;
+    SDL_Color color;
 public:
-	Cell();
+    Cell();
 
-	Cell(int x, int y);
+    Cell(int x, int y);
 
-	Figure *get_figure();
+    Figure *get_figure();
 
-	void set_figure(Figure *figure);
+    void set_figure(Figure *figure);
 
-	std::pair<int, int> get_coords();
+    void set_color(const SDL_Color *colorr) { this->color = *colorr; }
 
-	void render(SDL_Renderer *renderer) const;
+    std::pair<int, int> get_coords();
 
+    void render(SDL_Renderer *renderer) const;
+
+    void select(SDL_Renderer *renderer) const;
+
+    void clear(SDL_Renderer *renderer) const;
 };
 
 
