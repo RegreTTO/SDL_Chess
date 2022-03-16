@@ -1,8 +1,7 @@
 #include "Field.h"
 
 void Field::board_click(SDL_Renderer *renderer, int x, int y) {
-    x -= 25;
-    y -= 25;
+
     x /= 100;
     y /= 100;
     if (field[x][y].get_figure() != nullptr || this->chosen_cell != nullptr) {
@@ -22,7 +21,7 @@ void Field::board_click(SDL_Renderer *renderer, int x, int y) {
 }
 
 void Field::mouse_click_handler(SDL_Renderer *renderer, int x, int y) {
-    if (x <= 825 && x >= 25 && y <= 825 && y >= 25) {
+    if (x <= 800 && y <= 800) {
         board_click(renderer, x, y);
     }
 }
