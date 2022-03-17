@@ -14,8 +14,11 @@ void main_loop(Game &g, bool &is_done, SDL_Renderer *renderer) {
             if (event.type == SDL_QUIT)
                 is_done = true;
             if (event.button.type == SDL_MOUSEBUTTONUP && !g.menu.is_in_menu){
-                SDL_Log("(%d, %d)", event.button.x, event.button.y);
-                g.field.mouse_click_handler(renderer, event.button.x, event.button.y);
+				const int x = event.button.x;
+				const int y = event.button.y;
+                SDL_Log("(%d, %d)", x, y);
+                g.field.mouse_click_handler(renderer, x, y);
+				g.sidebar.mouse_click(x, y);
                 SDL_RenderPresent(renderer);
             }
         }
