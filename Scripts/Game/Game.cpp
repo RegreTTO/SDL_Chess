@@ -9,6 +9,7 @@ void Game::start_game(SDL_Renderer *renderer) {
 	Sidebar::show_black(renderer);
     Sidebar::show_white(renderer);
 	Sidebar::show_butt(renderer);
+	sidebar.mouse_click(renderer, 801, 1);
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
 			cells[i][j].render(renderer);

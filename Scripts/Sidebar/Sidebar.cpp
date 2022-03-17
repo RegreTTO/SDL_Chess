@@ -12,9 +12,6 @@ void Sidebar::show_white(SDL_Renderer *renderer) {
 	std::string sprites[6] = {"../sprites/king.txt", "../sprites/queen.txt", "../sprites/rook.txt",
 	                          "../sprites/bishop.txt", "../sprites/knight.txt", "../sprites/pawn.txt"};
 	for (const auto &a: sprites) {
-		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-		SDL_Rect rect = {i, j, 101, 100};
-		SDL_RenderDrawRect(renderer, &rect);
 		std::ifstream file(a);
 		while (!file.eof()) {
 			std::getline(file, s);
@@ -44,9 +41,6 @@ void Sidebar::show_black(SDL_Renderer *renderer) {
 	std::string sprites[6] = {"../sprites/king.txt", "../sprites/queen.txt", "../sprites/rook.txt",
 	                          "../sprites/bishop.txt", "../sprites/knight.txt", "../sprites/pawn.txt"};
 	for (const auto &a: sprites) {
-		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-		SDL_Rect rect = {i, j, 101, 100};
-		SDL_RenderDrawRect(renderer, &rect);
 		std::ifstream file(a);
 		while (!file.eof()) {
 			std::getline(file, s);
@@ -69,7 +63,13 @@ void Sidebar::show_black(SDL_Renderer *renderer) {
 
 
 Sidebar::Sidebar() {
-	this->figures = std::vector<std::vector<Cell>>(6, std::vector<Cell>(2));
+	this->figures = new Cell *[6];
+	for (int i = 0; i < 6; ++i) {
+		this->figures[i] = new Cell[2];
+		for (int j = 0; j < 2; ++j) {
+			this->figures[i][j] = Cell(i, j);
+		}
+	}
 	this->figures[0][0].set_figure(new King({0, 0}, 0));
 	this->figures[0][1].set_figure(new King({0, 1}, 1));
 
@@ -91,16 +91,19 @@ Sidebar::Sidebar() {
 	this->chosen_figure = this->figures[0][0].get_figure();
 }
 
-void Sidebar::mouse_click(int x, int y) {
+void Sidebar::mouse_click(SDL_Renderer *renderer, int x, int y) {
 	if (x > 800 && x < 1000 && y < 600) {
 		x -= 800;
 		y /= 100;
 		x /= 100;
+		auto coords = this->chosen_figure->get_cell();
+		this->selection_clear(renderer, &this->figures[coords.first][coords.second]);
 		choose_figure(x, y);
-
+		this->select_figure(renderer, &this->figures[y][x]);
 		SDL_Log("%s", chosen_figure->get_name().c_str());
 	}
 }
+
 void Sidebar::show_butt(SDL_Renderer *renderer) {
 	const int x = 800;
 	int j = 600;
@@ -109,12 +112,11 @@ void Sidebar::show_butt(SDL_Renderer *renderer) {
 	std::string s;
 	while (!file.eof()) {
 		std::getline(file, s);
-		for (char c : s) {
+		for (char c: s) {
 			if (c == '#') {
 				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 				SDL_RenderDrawPoint(renderer, i, j);
-			}
-			else if (c == '.') {
+			} else if (c == '.') {
 				SDL_SetRenderDrawColor(renderer, 86, 192, 218, 255);
 				SDL_RenderDrawPoint(renderer, i, j);
 			}

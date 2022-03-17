@@ -5,7 +5,7 @@
 
 class Sidebar {
 private:
-	std::vector<std::vector<Cell>> figures;
+	Cell** figures;
 	Figure *chosen_figure;
 public:
 	Sidebar();
@@ -20,8 +20,11 @@ public:
 
 	void choose_figure(int x, int y) { this->chosen_figure = figures[y][x].get_figure();}
 
-	void mouse_click(int x, int y);
+	void mouse_click(SDL_Renderer *renderer, int x, int y);
 
+	void select_figure(SDL_Renderer *renderer, Cell* cell);
+
+	void selection_clear(SDL_Renderer *renderer, Cell* cell);
 };
 
 
