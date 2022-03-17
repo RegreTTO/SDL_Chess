@@ -12,9 +12,6 @@ void Sidebar::show_white(SDL_Renderer *renderer) {
 	std::string sprites[6] = {"../sprites/king.txt", "../sprites/queen.txt", "../sprites/rook.txt",
 	                          "../sprites/bishop.txt", "../sprites/knight.txt", "../sprites/pawn.txt"};
 	for (const auto &a: sprites) {
-		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-		SDL_Rect rect = {i, j, 101, 100};
-		SDL_RenderDrawRect(renderer, &rect);
 		std::ifstream file(a);
 		while (!file.eof()) {
 			std::getline(file, s);
@@ -44,9 +41,6 @@ void Sidebar::show_black(SDL_Renderer *renderer) {
 	std::string sprites[6] = {"../sprites/king.txt", "../sprites/queen.txt", "../sprites/rook.txt",
 	                          "../sprites/bishop.txt", "../sprites/knight.txt", "../sprites/pawn.txt"};
 	for (const auto &a: sprites) {
-		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-		SDL_Rect rect = {i, j, 101, 100};
-		SDL_RenderDrawRect(renderer, &rect);
 		std::ifstream file(a);
 		while (!file.eof()) {
 			std::getline(file, s);
