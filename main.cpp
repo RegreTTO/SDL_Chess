@@ -22,9 +22,11 @@ void main_loop(Game &g, bool &is_done, SDL_Renderer *renderer) {
 					g.field.mouse_click_handler(renderer, x, y);
 					g.sidebar.mouse_click(x, y);
 				}
-				if (event.button.button == SDL_BUTTON_RIGHT && x < 800 && y < 800) {
+				if (event.button.button == SDL_BUTTON_RIGHT && x < 800 && y < 800)
 					g.new_figure(renderer, x, y);
-				}
+                if (event.button.button == SDL_BUTTON_MIDDLE && x < 800 && y < 800) {
+                    g.delete_figure(renderer, x, y);
+                }
 			}
 			SDL_RenderPresent(renderer);
 

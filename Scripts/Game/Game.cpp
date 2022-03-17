@@ -32,7 +32,11 @@ void Game::new_figure(SDL_Renderer *renderer, int x, int y) {
     this->field.get_field()[x][y].render(renderer);
     this->field.get_field()[x][y].set_figure(ftmp);
     this->field.get_field()[x][y].get_figure()->render(renderer);
-
 }
 
-
+void Game::delete_figure(SDL_Renderer *renderer, int x, int y) {
+    x /= 100;
+    y /= 100;
+    this->field.get_field()[x][y].set_figure(nullptr);
+    this->field.get_field()[x][y].render(renderer);
+}
