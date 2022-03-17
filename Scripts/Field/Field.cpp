@@ -87,10 +87,6 @@ void Field::show_board(SDL_Renderer *renderer) {
     }
 }
 
-void Field::init_bar_second(SDL_Renderer *renderer) {
-
-}
-
 void Field::move_figure(SDL_Renderer *renderer, Figure *fig, Cell *cell) {
     std::pair<int, int> starting_coords = fig->get_cell();
     this->field[starting_coords.first][starting_coords.second].render(renderer);
