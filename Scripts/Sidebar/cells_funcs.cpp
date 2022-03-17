@@ -9,9 +9,6 @@ void Sidebar::selection_clear(SDL_Renderer *renderer, Cell *cell) {
 	SDL_RenderDrawRect(renderer, &rect2);
 }
 
-void select(SDL_Renderer *renderer) {
-
-}
 
 void Sidebar::select_figure(SDL_Renderer *renderer, Cell *cell) {
 	SDL_SetRenderDrawColor(renderer, 230, 0, 0, 255);
