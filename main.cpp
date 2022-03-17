@@ -19,11 +19,11 @@ void main_loop(Game &g, bool &is_done, SDL_Renderer *renderer) {
 				const int y = event.button.y;
 				if (event.button.button == SDL_BUTTON_LEFT) {
 					SDL_Log("(%d, %d)", x, y);
-					g.field.mouse_click_handler(renderer, x, y, nullptr);
+					g.field.mouse_click_handler(renderer, x, y);
 					g.sidebar.mouse_click(x, y);
 				}
-				if (event.button.button == SDL_BUTTON_MIDDLE) {
-					g.field.mouse_click_handler(renderer, x, y, g.sidebar.get_chosen_figure());
+				if (event.button.button == SDL_BUTTON_RIGHT && x < 800 && y < 800) {
+					g.new_figure(renderer, x, y);
 				}
 			}
 			SDL_RenderPresent(renderer);

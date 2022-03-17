@@ -18,4 +18,21 @@ void Game::start_game(SDL_Renderer *renderer) {
 	}
 }
 
+void Game::new_figure(SDL_Renderer *renderer, int x, int y) {
+    x /= 100;
+    y /= 100;
+    Sidebar tmp;
+
+    std::pair<int, int> fig = sidebar.get_chosen_figure()->get_cell();
+    tmp.choose_figure(fig.second, fig.first);
+
+    Figure *ftmp = tmp.get_chosen_figure();
+    ftmp->set_cell({x, y});
+
+    this->field.get_field()[x][y].render(renderer);
+    this->field.get_field()[x][y].set_figure(ftmp);
+    this->field.get_field()[x][y].get_figure()->render(renderer);
+
+}
+
 

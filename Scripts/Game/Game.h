@@ -14,8 +14,7 @@ public:
 
 	void start_game(SDL_Renderer *renderer);
 
-	void show_menu(SDL_Renderer *renderer);
-
+	void new_figure(SDL_Renderer *renderer, int x, int y);
 };
 
 
