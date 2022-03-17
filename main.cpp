@@ -17,21 +17,25 @@ int main(int argc, char *args[]) {
     SDL_RenderClear(renderer);
 
 	Game g;
-	g.start_game(renderer);
-
-    while (!is_done) {
-        SDL_Event event;
-
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT)
-                is_done = true;
-            if (event.button.type == SDL_MOUSEBUTTONUP){
-                SDL_Log("(%d, %d)", event.button.x, event.button.y);
-                g.field.mouse_click_handler(renderer, event.button.x, event.button.y);
-            }
-        }
-        SDL_RenderPresent(renderer);
-    }
+	g.menu.parse_menu(renderer);
+    SDL_RenderPresent(renderer);
+    SDL_Delay(10000);
+//	g.start_game(renderer);
+//    SDL_RenderPresent(renderer);
+//    while (!is_done) {
+//        SDL_Event event;
+//
+//        while (SDL_PollEvent(&event)) {
+//            if (event.type == SDL_QUIT)
+//                is_done = true;
+//            if (event.button.type == SDL_MOUSEBUTTONUP){
+//                SDL_Log("(%d, %d)", event.button.x, event.button.y);
+//                g.field.mouse_click_handler(renderer, event.button.x, event.button.y);
+//                SDL_RenderPresent(renderer);
+//            }
+//        }
+//
+//    }
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
