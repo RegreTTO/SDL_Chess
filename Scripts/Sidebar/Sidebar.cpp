@@ -69,10 +69,7 @@ void Sidebar::show_black(SDL_Renderer *renderer) {
 
 
 Sidebar::Sidebar() {
-	this->figures = new Cell *[6];
-	for (int i = 0; i < 6; i++) {
-		this->figures[i] = new Cell[2];
-	}
+	this->figures = std::vector<std::vector<Cell>>(6, std::vector<Cell>(2));
 	this->figures[0][0].set_figure(new King({0, 0}, 0));
 	this->figures[0][1].set_figure(new King({0, 1}, 1));
 
@@ -94,13 +91,6 @@ Sidebar::Sidebar() {
 	this->chosen_figure = this->figures[0][0].get_figure();
 }
 
-Sidebar::~Sidebar() {
-	for (int i = 0; i < 8; ++i) {
-		delete[] this->figures[i];
-	}
-	delete[] this->figures;
-}
-
 void Sidebar::mouse_click(int x, int y) {
 	if (x > 800 && x < 1000 && y < 600) {
 		x -= 800;
@@ -109,5 +99,28 @@ void Sidebar::mouse_click(int x, int y) {
 		choose_figure(x, y);
 
 		SDL_Log("%s", chosen_figure->get_name().c_str());
+	}
+}
+void Sidebar::show_butt(SDL_Renderer *renderer) {
+	const int x = 800;
+	int j = 600;
+	int i = x;
+	std::ifstream file("../sprites/reset.txt");
+	std::string s;
+	while (!file.eof()) {
+		std::getline(file, s);
+		for (char c : s) {
+			if (c == '#') {
+				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+				SDL_RenderDrawPoint(renderer, i, j);
+			}
+			else if (c == '.') {
+				SDL_SetRenderDrawColor(renderer, 86, 192, 218, 255);
+				SDL_RenderDrawPoint(renderer, i, j);
+			}
+			i++;
+		}
+		j++;
+		i = x;
 	}
 }

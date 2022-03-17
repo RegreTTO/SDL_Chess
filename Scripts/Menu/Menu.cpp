@@ -50,3 +50,27 @@ void Menu::animate_menu(SDL_Renderer *renderer, int &counter, bool &up) {
     }
 
 }
+
+void Menu::rules_butt(SDL_Renderer *renderer) {
+	const int x = 800;
+	int j = 700;
+	int i = x;
+	std::ifstream file("../sprites/rules.txt");
+	std::string s;
+	while (!file.eof()) {
+		std::getline(file, s);
+		for (char c : s) {
+			if (c == '#') {
+				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+				SDL_RenderDrawPoint(renderer, i, j);
+			}
+			else if (c == '.') {
+				SDL_SetRenderDrawColor(renderer, 142, 183, 193, 255);
+				SDL_RenderDrawPoint(renderer, i, j);
+			}
+			i++;
+		}
+		j++;
+		i = x;
+	}
+}

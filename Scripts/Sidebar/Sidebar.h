@@ -5,12 +5,10 @@
 
 class Sidebar {
 private:
-	Cell **figures;
+	std::vector<std::vector<Cell>> figures;
 	Figure *chosen_figure;
 public:
 	Sidebar();
-
-	~Sidebar();
 
 	static void show_white(SDL_Renderer *renderer);
 
@@ -23,6 +21,7 @@ public:
 	void mouse_click(int x, int y);
 
 
+	static void show_butt(SDL_Renderer *renderer);
 };
 
 
