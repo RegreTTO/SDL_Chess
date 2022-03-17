@@ -1,10 +1,11 @@
 #include "Menu.h"
 
-void Menu::parse_menu(SDL_Renderer *renderer) {
+
+void Menu::parse_menu(SDL_Renderer *renderer, std::string path) {
     const int x = 0;
     int i = x;
     int j = 0;
-    std::ifstream file("../sprites/menu.txt");
+    std::ifstream file(path);
     std::string s;
     while (!file.eof()) {
         std::getline(file, s);
@@ -32,3 +33,20 @@ void Menu::parse_menu(SDL_Renderer *renderer) {
     }
 }
 
+void Menu::animate_menu(SDL_Renderer *renderer, int &counter, bool &up) {
+    std::string path;
+    path = "../sprites/menu/menu" + std::to_string(counter) + ".txt";
+    parse_menu(renderer, path);
+
+    if (up && counter < 9) counter++;
+    else if (!up && counter > 1) counter--;
+    else if (up && counter == 9) {
+        counter--;
+        up = false;
+    }
+    else if (!up && counter == 1) {
+        counter++;
+        up = true;
+    }
+
+}
