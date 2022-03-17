@@ -8,7 +8,8 @@ private:
 	Cell **figures;
 public:
 	Sidebar();
-	static void show(SDL_Renderer *renderer);
+	static void show_white(SDL_Renderer *renderer);
+    static void show_black(SDL_Renderer *renderer);
 };
 
 
