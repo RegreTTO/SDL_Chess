@@ -20,13 +20,13 @@ void main_loop(Game &g, bool &is_done, SDL_Renderer *renderer) {
 				if (event.button.button == SDL_BUTTON_LEFT) {
 					SDL_Log("(%d, %d)", x, y);
 					g.field.mouse_click_handler(renderer, x, y);
-					g.sidebar.mouse_click(x, y);
+					g.sidebar.mouse_click(renderer, x, y);
 				}
 				if (event.button.button == SDL_BUTTON_RIGHT && x < 800 && y < 800)
 					g.new_figure(renderer, x, y);
-                if (event.button.button == SDL_BUTTON_MIDDLE && x < 800 && y < 800) {
-                    g.delete_figure(renderer, x, y);
-                }
+				if (event.button.button == SDL_BUTTON_MIDDLE && x < 800 && y < 800) {
+					g.delete_figure(renderer, x, y);
+				}
 			}
 			SDL_RenderPresent(renderer);
 
@@ -49,7 +49,7 @@ void start_menu(Game &g, bool &is_done, SDL_Renderer *renderer) {
 				is_done = true;
 			if (event.button.type == SDL_MOUSEBUTTONUP && event.button.y >= 542 && event.button.y <= 664 &&
 			    event.button.x >= 410 && event.button.x <= 603) {
-			    SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
+				SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
 				SDL_RenderClear(renderer);
 				g.start_game(renderer);
 				SDL_RenderPresent(renderer);
@@ -66,9 +66,9 @@ int main(int argc, char *args[]) {
 	SDL_Window *window;
 	SDL_Renderer *renderer;
 	SDL_Init(SDL_INIT_EVERYTHING);
-	SDL_CreateWindowAndRenderer(WINDOW_WIDTH + 200, WINDOW_WIDTH, SDL_WINDOW_FULLSCREEN_DESKTOP, &window, &renderer);
+	SDL_CreateWindowAndRenderer(WINDOW_WIDTH + 200, WINDOW_WIDTH, 0, &window, &renderer);
 	bool is_done = false;
-    SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
+	SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
 	SDL_RenderClear(renderer);
 
 	Game g;
