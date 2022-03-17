@@ -8,10 +8,9 @@
 #include "../Figure.h"
 
 class Knight : public Figure {
-	const std::string name = "Knight";
 
 public:
-	explicit Knight(std::pair<int, int> cell, int color) : Figure(cell, color) {};
+	explicit Knight(std::pair<int, int> cell, int color) : Figure(cell, color) { name = "Knight"; };
 
 	void render(SDL_Renderer *renderer) override;
 };

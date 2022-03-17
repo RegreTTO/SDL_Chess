@@ -8,10 +8,9 @@
 
 class Pawn : public Figure {
 
-	const std::string name = "Pawn";
 
 public:
-	explicit Pawn(std::pair<int, int> cell, int color) : Figure(cell, color){};
+	explicit Pawn(std::pair<int, int> cell, int color) : Figure(cell, color){ name = "Pawn"; };
 
 	void render(SDL_Renderer *renderer) override;
 
