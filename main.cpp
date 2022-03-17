@@ -49,7 +49,7 @@ int main(int argc, char *args[]) {
     SDL_Window *window;
     SDL_Renderer *renderer;
     SDL_Init(SDL_INIT_EVERYTHING);
-    SDL_CreateWindowAndRenderer(WINDOW_WIDTH+200, WINDOW_WIDTH, SDL_WINDOW_FULLSCREEN_DESKTOP, &window, &renderer);
+    SDL_CreateWindowAndRenderer(WINDOW_WIDTH+200, WINDOW_WIDTH, 0, &window, &renderer);
     bool is_done = false;
     SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
     SDL_RenderClear(renderer);

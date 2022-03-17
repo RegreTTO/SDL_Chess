@@ -12,7 +12,7 @@ class Cell {
 private:
     int x, y;
     Figure *fig = nullptr;
-    SDL_Color color;
+    SDL_Color color{};
 public:
     Cell();
 

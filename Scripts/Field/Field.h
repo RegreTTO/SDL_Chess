@@ -28,7 +28,7 @@ public:
 	static void show_board(SDL_Renderer *renderer);
 
 	static void init_bar_second(SDL_Renderer *renderer);
-
+  
 	void mouse_click_handler(SDL_Renderer *renderer, int x, int y);
 };
 
