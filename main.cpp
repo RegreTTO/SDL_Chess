@@ -44,12 +44,12 @@ void start_menu(Game &g, bool &is_done, SDL_Renderer *renderer) {
 		Menu::rules_butt(renderer);
 		SDL_Delay(10);
 		SDL_RenderPresent(renderer);
-
 		while (SDL_PollEvent(&event)) {
 			if (event.type == SDL_QUIT)
 				is_done = true;
 			if (event.button.type == SDL_MOUSEBUTTONUP && event.button.y >= 542 && event.button.y <= 664 &&
 			    event.button.x >= 410 && event.button.x <= 603) {
+			    SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
 				SDL_RenderClear(renderer);
 				g.start_game(renderer);
 				SDL_RenderPresent(renderer);
@@ -66,9 +66,9 @@ int main(int argc, char *args[]) {
 	SDL_Window *window;
 	SDL_Renderer *renderer;
 	SDL_Init(SDL_INIT_EVERYTHING);
-	SDL_CreateWindowAndRenderer(WINDOW_WIDTH + 200, WINDOW_WIDTH, 0, &window, &renderer);
+	SDL_CreateWindowAndRenderer(WINDOW_WIDTH + 200, WINDOW_WIDTH, SDL_WINDOW_FULLSCREEN_DESKTOP, &window, &renderer);
 	bool is_done = false;
-	SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
+    SDL_SetRenderDrawColor(renderer, 115, 115, 115, 255);
 	SDL_RenderClear(renderer);
 
 	Game g;
