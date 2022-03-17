@@ -1,13 +1,8 @@
 #include "Field.h"
 
-void Field::board_click(SDL_Renderer *renderer, int x, int y, Figure *swap_fig) {
+void Field::board_click(SDL_Renderer *renderer, int x, int y) {
 	x /= 100;
 	y /= 100;
-	if (swap_fig != nullptr) {
-		field[x][y].clear(renderer);
-		field[x][y].set_figure(swap_fig);
-		return;
-	}
 	if (field[x][y].get_figure() != nullptr || this->chosen_cell != nullptr) {
 		if (this->chosen_cell == nullptr) {
 			if (this->chosen_cell == &field[x][y]) {
@@ -24,9 +19,9 @@ void Field::board_click(SDL_Renderer *renderer, int x, int y, Figure *swap_fig) 
 	}
 }
 
-void Field::mouse_click_handler(SDL_Renderer *renderer, int x, int y, Figure *swap_fig) {
+void Field::mouse_click_handler(SDL_Renderer *renderer, int x, int y) {
 	if (x < 800 && y < 800) {
-		board_click(renderer, x, y, swap_fig);
+		board_click(renderer, x, y);
 	}
 	if (x > 800 && x < 1000 && y >= 600 && y <= 800) {
 
@@ -41,8 +36,6 @@ void Field::mouse_click_handler(SDL_Renderer *renderer, int x, int y, Figure *sw
 				auto figure = field[i][j].get_figure();
 				if (figure != nullptr) figure->render(renderer);
 			}
-
-
 	}
 }
 
